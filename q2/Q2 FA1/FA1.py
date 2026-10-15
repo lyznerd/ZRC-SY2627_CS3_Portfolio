@@ -57,34 +57,62 @@ class Magazine(Publication):
         super().display_info()
         print(f"Issue Number: {self.__issue_number}")
 
-publication1 = Publication("Introduction to Python", "John Smith")
-publication2 = Publication("Computer Science Basics", "Mary Johnson")
+publications = []
+books = []
+magazines = []
 
-book1 = Book("Python Programming", "Mark Lee", 350)
-book2 = Book("Data Structures", "Anna Cruz", 280)
+print("LIBRARY MANAGEMENT SYSTEM")
 
-magazine1 = Magazine("Science Today", "Peter Brown", 12)
-magazine2 = Magazine("Tech Monthly", "Lisa Garcia", 8)
+for i in range(2):
+    print(f"\nEnter Publication {i + 1} Information")
+    title = input("Enter title: ")
+    author = input("Enter author: ")
+    publications.append(Publication(title, author))
 
-print("===== PUBLICATIONS =====")
-publication1.display_info()
-print()
-publication2.display_info()
+for i in range(2):
+    print(f"\nEnter Book {i + 1} Information")
+    title = input("Enter title: ")
+    author = input("Enter author: ")
 
-print("\n===== BOOKS =====")
-book1.display_info()
-print()
-book2.display_info()
+    while True:
+        try:
+            number_pages = int(input("Enter number of pages: "))
+            if number_pages > 0:
+                break
+            print("The number of pages must be positive")
+        except ValueError:
+            print("Please enter a valid whole number")
 
-print("\n===== MAGAZINES =====")
-magazine1.display_info()
-print()
-magazine2.display_info()
-```
+    books.append(Book(title, author, number_pages))
 
-# Display Magazine information
-print("\n=== MAGAZINES ===")
-magazine1.display_info()
-print()
-magazine2.display_info()
+for i in range(2):
+    print(f"\nEnter Magazine {i + 1} Information")
+    title = input("Enter title: ")
+    author = input("Enter author: ")
+
+    while True:
+        try:
+            issue_number = int(input("Enter issue number: "))
+            if issue_number > 0:
+                break
+            print("The issue number must be positive")
+        except ValueError:
+            print("Please enter a valid whole number")
+
+    magazines.append(Magazine(title, author, issue_number))
+
+print("\n===== PUBLICATIONS =====")
+for publication in publications:
+    publication.display_info()
+    print()
+
+print("===== BOOKS =====")
+for book in books:
+    book.display_info()
+    print()
+
+print("===== MAGAZINES =====")
+for magazine in magazines:
+    magazine.display_info()
+    print()
 
