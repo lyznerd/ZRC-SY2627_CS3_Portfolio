@@ -1,0 +1,44 @@
+ class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def sound(self):
+        pass
+
+    def eat(self):
+        pass
+
+
+class Lion(Animal):
+    def sound(self):
+        print(self.name, "roars loudly,")
+
+    def eat(self):
+        print(self.name, "eats fresh meat!")
+
+
+class Elephant(Animal):
+    def sound(self):
+        print(self.name, "trumpets,")
+
+    def eat(self):
+        print(self.name, "eats grass and fruits!")
+
+
+class Monkey(Animal):
+    def sound(self):
+        print(self.name, "chatters,")
+
+    def eat(self):
+        print(self.name, "eats bananas!")
+
+
+animals = [
+    Lion("Lion"),
+    Elephant("Elephant"),
+    Monkey("Monkey")
+]
+
+for animal in animals:
+    animal.sound()
+    animal.eat()
