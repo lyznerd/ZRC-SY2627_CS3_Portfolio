@@ -1,4 +1,3 @@
-
 class Animal:
     def __init__(self, name):
         self.name = name
@@ -12,26 +11,26 @@ class Animal:
 
 class Lion(Animal):
     def sound(self):
-        print(self.name, "roars loudly.")
+        print(self.name, "roars loudly,")
 
     def eat(self):
-        print(self.name, "eats fresh meat.")
+        print(self.name, "eats fresh meat!")
 
 
 class Elephant(Animal):
     def sound(self):
-        print(self.name, "trumpets.")
+        print(self.name, "trumpets,")
 
     def eat(self):
-        print(self.name, "eats grass and fruits.")
+        print(self.name, "eats grass and fruits!")
 
 
 class Monkey(Animal):
     def sound(self):
-        print(self.name, "chatters.")
+        print(self.name, "chatters,")
 
     def eat(self):
-        print(self.name, "eats bananas.")
+        print(self.name, "eats bananas!")
 
 
 animals = [
@@ -43,4 +42,6 @@ animals = [
 for animal in animals:
     animal.sound()
     animal.eat()
+
+
 
